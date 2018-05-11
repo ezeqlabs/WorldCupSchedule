@@ -5,7 +5,12 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import br.com.ezeqlabs.worldcupschedule.Adapters.SectionsPagerAdapter
+import br.com.ezeqlabs.worldcupschedule.Api.RetrofitConfiguration
+import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,10 +31,28 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
 
-        // Set up the ViewPager with the sections adapter.
-        container.adapter = mSectionsPagerAdapter
+        val call = RetrofitConfiguration.getService().getWorldCupInfo()
+        call.enqueue(object : Callback<WorldCupInfo?> {
+            override fun onFailure(call: Call<WorldCupInfo?>?, t: Throwable?) {
+            }
+
+            override fun onResponse(call: Call<WorldCupInfo?>?, response: Response<WorldCupInfo?>?) {
+                response?.let {
+                    if (response.isSuccessful) {
+                        response.body()?.let {
+                            val worldCupInfo = response.body()
+                            worldCupInfo?.let {
+                                mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+                                mSectionsPagerAdapter!!.groups = worldCupInfo.groups
+                                container.adapter = mSectionsPagerAdapter
+                            }
+                        }
+                    }
+                }
+            }
+
+        })
     }
 
 
