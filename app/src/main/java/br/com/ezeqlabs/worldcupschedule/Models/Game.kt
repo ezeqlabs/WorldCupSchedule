@@ -1,6 +1,8 @@
 package br.com.ezeqlabs.worldcupschedule.Models
 
-class Game {
+import java.io.Serializable
+
+class Game : Serializable {
     lateinit var date: String
     lateinit var day: String
     lateinit var time: String

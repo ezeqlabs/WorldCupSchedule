@@ -1,5 +1,7 @@
 package br.com.ezeqlabs.worldcupschedule.Models
 
-class WorldCupInfo {
+import java.io.Serializable
+
+class WorldCupInfo : Serializable {
     lateinit var groups: List<Group>
 }

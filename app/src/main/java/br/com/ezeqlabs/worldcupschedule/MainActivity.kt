@@ -7,6 +7,7 @@ import android.view.MenuItem
 import br.com.ezeqlabs.worldcupschedule.Adapters.SectionsPagerAdapter
 import br.com.ezeqlabs.worldcupschedule.Api.RetrofitConfiguration
 import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
+import br.com.ezeqlabs.worldcupschedule.Utils.IntentParameters
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -14,14 +15,6 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
-    /**
-     * The [android.support.v4.view.PagerAdapter] that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * [android.support.v4.app.FragmentStatePagerAdapter].
-     */
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,27 +25,14 @@ class MainActivity : AppCompatActivity() {
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
 
-        val call = RetrofitConfiguration.getService().getWorldCupInfo()
-        call.enqueue(object : Callback<WorldCupInfo?> {
-            override fun onFailure(call: Call<WorldCupInfo?>?, t: Throwable?) {
-            }
+        val extras = intent.extras
 
-            override fun onResponse(call: Call<WorldCupInfo?>?, response: Response<WorldCupInfo?>?) {
-                response?.let {
-                    if (response.isSuccessful) {
-                        response.body()?.let {
-                            val worldCupInfo = response.body()
-                            worldCupInfo?.let {
-                                mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
-                                mSectionsPagerAdapter!!.groups = worldCupInfo.groups
-                                container.adapter = mSectionsPagerAdapter
-                            }
-                        }
-                    }
-                }
-            }
-
-        })
+        extras?.let {
+            val worldCupInfo = extras.getSerializable(IntentParameters.worldCupInfo) as WorldCupInfo
+            mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+            mSectionsPagerAdapter!!.groups = worldCupInfo.groups
+            container.adapter = mSectionsPagerAdapter
+        }
     }
 
 
