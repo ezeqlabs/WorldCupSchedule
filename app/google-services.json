@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "939742505636",
+    "firebase_url": "https://world-cup-schedule.firebaseio.com",
+    "project_id": "world-cup-schedule",
+    "storage_bucket": "world-cup-schedule.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939742505636:android:cda82b5a1ac3c02c",
+        "android_client_info": {
+          "package_name": "br.com.ezeqlabs.worldcupschedule"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939742505636-l0d8hiehiac3e28cbt9tl6alhr8mnbsl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXmcBtVFVDoNIMSSxNy4Blbil0QND2O3w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
