@@ -1,5 +1,38 @@
 <resources>
-    <string name="app_name">WorldCupSchedule</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="app_name">World Cup Schedule</string>
+    <string name="action_finals">Knockout Phase</string>
+    <string name="section_format">Group %1$s</string>
+
+    <string name="russia">Russia</string>
+    <string name="saudi_arabia">Saudi Arabia</string>
+    <string name="egypt">Egypt</string>
+    <string name="uruguay">Uruguay</string>
+    <string name="marocco">Morocco</string>
+    <string name="ir_iran">IR Iran</string>
+    <string name="portugal">Portugal</string>
+    <string name="spain">Spain</string>
+    <string name="france">France</string>
+    <string name="australia">Australia</string>
+    <string name="argentina">Argentina</string>
+    <string name="iceland">Iceland</string>
+    <string name="peru">Peru</string>
+    <string name="denmark">Denmark</string>
+    <string name="croatia">Croatia</string>
+    <string name="nigeria">Nigeria</string>
+    <string name="costa_rica">Costa Rica</string>
+    <string name="serbia">Serbia</string>
+    <string name="germany">Germany</string>
+    <string name="mexico">Mexico</string>
+    <string name="brazil">Brazil</string>
+    <string name="switzerland">Switzerland</string>
+    <string name="sweden">Sweden</string>
+    <string name="korea_republic">Korea Republic</string>
+    <string name="belgium">Belgium</string>
+    <string name="panama">Panama</string>
+    <string name="tunisia">Tunisia</string>
+    <string name="england">England</string>
+    <string name="colombia">Colombia</string>
+    <string name="japan">Japan</string>
+    <string name="poland">Poland</string>
+    <string name="senegal">Senegal</string>
 </resources>
