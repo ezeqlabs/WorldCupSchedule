@@ -35,4 +35,39 @@
     <string name="japan">Japan</string>
     <string name="poland">Poland</string>
     <string name="senegal">Senegal</string>
+    
+    <string name="luzhniki_stadium">Luzhniki Stadium</string>
+    <string name="ekaterinburg_arena">Ekaterinburg Arena</string>
+    <string name="saint_petersburg_stadium">Saint Petersburg Stadium</string>
+    <string name="fisht_stadium">Fisht Stadium</string>
+    <string name="kazan_arena">Kazan Arena</string>
+    <string name="spartak_stadium">Spartak Stadium</string>
+    <string name="mordovia_arena">Mordovia Arena</string>
+    <string name="kaliningrad_stadium">Kaliningrad Stadium</string>
+    <string name="samara_arena">Samara Arena</string>
+    <string name="rostov_arena">Rostov Arena</string>
+    <string name="nizhny_novgorod_stadium">Nizhny Novgorod Stadium</string>
+    <string name="volgograd_arena">Volgograd Arena</string>
+
+    <string name="moscow">Moscow</string>
+    <string name="ekaterinburg">Ekaterinburg</string>
+    <string name="st_petersburg">St. Petersburg</string>
+    <string name="sochi">Sochi</string>
+    <string name="kazan">Kazan</string>
+    <string name="saransk">Saransk</string>
+    <string name="kaliningrad">Kaliningrad</string>
+    <string name="samara">Samara</string>
+    <string name="rostov_on_don">Rostov-On-Don</string>
+    <string name="nizhny_novgorod">Nizhny Novgorod</string>
+    <string name="volgograd">Volgograd</string>
+
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+
+    <string name="local_time">Local time</string>
 </resources>

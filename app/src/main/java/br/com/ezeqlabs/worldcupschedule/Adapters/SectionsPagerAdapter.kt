@@ -10,8 +10,6 @@ class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     lateinit var groups: List<Group>
 
     override fun getItem(position: Int): Fragment {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
         groups?.let {
             return PlaceholderFragment.newInstance(groups[position])
         }

@@ -19,26 +19,28 @@ class PlaceholderFragment : Fragment() {
 
         group?.let {
             rootView.section_label.text = getString(R.string.section_format, group.letter)
+            val textConverter = TextConverter(context)
 
-            for(game in group.games) {
+            for (game in group.games) {
                 val matchView = inflater.inflate(R.layout.item_match, null)
 
-                val date = game.date
-                val day = game.day
+                val date = textConverter.convertDate(game.date)
+                val day = textConverter.convertDay(game.day)
                 val matchDate = "$date - $day"
                 matchView.tv_match_date.text = matchDate
 
-                matchView.tv_home_team.text = game.team_home
+                matchView.tv_home_team.text = textConverter.convertCountry(game.team_home)
                 matchView.tv_home_score.text = game.team_score
                 matchView.tv_away_score.text = game.away_score
-                matchView.tv_away_team.text = game.away_team
+                matchView.tv_away_team.text = textConverter.convertCountry(game.away_team)
 
-                val hour = game.time
-                val time = "$hour (Russian time)"
+                val hour = textConverter.convertTime(game.time)
+                val localTime = context.resources.getString(R.string.local_time)
+                val time = "$hour - $localTime"
                 matchView.tv_time.text = time
 
-                val city = game.city
-                val stadium = game.stadium
+                val city = textConverter.convertCity(game.city)
+                val stadium = textConverter.convertStadium(game.stadium)
                 val place = "$stadium - $city"
                 matchView.tv_place.text = place
 
