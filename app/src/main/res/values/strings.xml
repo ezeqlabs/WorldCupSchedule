@@ -70,4 +70,12 @@
     <string name="sunday">Sunday</string>
 
     <string name="local_time">Local time</string>
+
+    <string name="view_group_info">View Group Information</string>
+    <string name="view_group_matches">View Group Matches</string>
+
+    <string name="points">PTS</string>
+    <string name="matches_played">MP</string>
+    <string name="wins">W</string>
+    <string name="loses">L</string>
 </resources>
