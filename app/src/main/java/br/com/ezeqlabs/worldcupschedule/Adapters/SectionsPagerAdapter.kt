@@ -8,10 +8,11 @@ import br.com.ezeqlabs.worldcupschedule.Utils.PlaceholderFragment
 
 class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     lateinit var groups: List<Group>
+    lateinit var phase: String
 
     override fun getItem(position: Int): Fragment {
         groups?.let {
-            return PlaceholderFragment.newInstance(groups[position])
+            return PlaceholderFragment.newInstance(groups[position], phase)
         }
     }
 

@@ -2,7 +2,6 @@ package br.com.ezeqlabs.worldcupschedule.Utils
 
 import android.content.Context
 import br.com.ezeqlabs.worldcupschedule.R
-import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -43,7 +42,7 @@ class TextConverter(context: Context) {
             "japan" -> context.resources.getString(R.string.japan)
             "poland" -> context.resources.getString(R.string.poland)
             "senegal" -> context.resources.getString(R.string.senegal)
-            else -> context.resources.getString(R.string.russia)
+            else -> key
         }
 
         return countryName
@@ -63,7 +62,7 @@ class TextConverter(context: Context) {
             "rostov_arena" -> context.resources.getString(R.string.rostov_arena)
             "nizhny_novgorod_stadium" -> context.resources.getString(R.string.nizhny_novgorod_stadium)
             "volgograd_arena" -> context.resources.getString(R.string.volgograd_arena)
-            else -> context.resources.getString(R.string.luzhniki_stadium)
+            else -> key
         }
 
         return stadiumName
@@ -82,7 +81,7 @@ class TextConverter(context: Context) {
             "rostov_on_don" -> context.resources.getString(R.string.rostov_on_don)
             "nizhny_novgorod" -> context.resources.getString(R.string.nizhny_novgorod)
             "volgograd" -> context.resources.getString(R.string.volgograd)
-            else -> context.resources.getString(R.string.moscow)
+            else -> key
         }
 
         return cityName
@@ -97,7 +96,7 @@ class TextConverter(context: Context) {
             "friday" -> context.resources.getString(R.string.friday)
             "saturday" -> context.resources.getString(R.string.saturday)
             "sunday" -> context.resources.getString(R.string.sunday)
-            else -> context.resources.getString(R.string.monday)
+            else -> key
         }
 
         return dayName
@@ -118,6 +117,30 @@ class TextConverter(context: Context) {
     }
 
     fun convertTime(key: String): String {
-        return key
+        val DATE_FORMAT = "hh:mm a z";
+        val formatter = SimpleDateFormat(DATE_FORMAT)
+
+        val date = formatter.parse(key)
+        val tz = TimeZone.getDefault()
+        formatter.timeZone = tz
+
+        val dateFormatted = formatter.format(date).split(" ")
+        val hour = dateFormatted[0]
+        val period = dateFormatted[1]
+        
+        return "$hour $period"
+    }
+
+    fun convertLetter(key: String): String {
+        val letterName = when (key) {
+            "round_of" -> context.resources.getString(R.string.round_of)
+            "quarter_finals" -> context.resources.getString(R.string.quarter_finals)
+            "semi_finals" -> context.resources.getString(R.string.semi_finals)
+            "third_place" -> context.resources.getString(R.string.third_place)
+            "finals" -> context.resources.getString(R.string.finals)
+            else -> context.resources.getString(R.string.section_format, key)
+        }
+
+        return letterName
     }
 }

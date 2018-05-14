@@ -10,7 +10,7 @@ import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
 import br.com.ezeqlabs.worldcupschedule.Utils.IntentParameters
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class FinalsActivity : AppCompatActivity() {
 
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
     private var worldCupInfo: WorldCupInfo? = null
@@ -27,22 +27,22 @@ class MainActivity : AppCompatActivity() {
             worldCupInfo = extras.getSerializable(IntentParameters.worldCupInfo) as WorldCupInfo
             mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
             mSectionsPagerAdapter!!.phase = worldCupInfo!!.phase
-            mSectionsPagerAdapter!!.groups = worldCupInfo!!.groups
+            mSectionsPagerAdapter!!.groups = worldCupInfo!!.knockoutPhase
             container.adapter = mSectionsPagerAdapter
         }
     }
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.menu_finals, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
-        if (id == R.id.action_finals) {
-            val intent = Intent(this, FinalsActivity::class.java)
+        if (id == R.id.action_groups) {
+            val intent = Intent(this, MainActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
             return true

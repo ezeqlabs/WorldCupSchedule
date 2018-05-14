@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import br.com.ezeqlabs.worldcupschedule.Api.RetrofitConfiguration
 import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
 import br.com.ezeqlabs.worldcupschedule.Utils.IntentParameters
+import br.com.ezeqlabs.worldcupschedule.Utils.State
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,10 +33,17 @@ class SplashActivity : AppCompatActivity() {
                         response.body()?.let {
                             val worldCupInfo = response.body()
                             worldCupInfo?.let {
-                                val intent = Intent(context, MainActivity::class.java)
-                                intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
-                                startActivity(intent)
-                                finish()
+                                if (worldCupInfo.phase == State.GROUPS) {
+                                    val intent = Intent(context, MainActivity::class.java)
+                                    intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
+                                    startActivity(intent)
+                                    finish()
+                                } else {
+                                    val intent = Intent(context, FinalsActivity::class.java)
+                                    intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
+                                    startActivity(intent)
+                                    finish()
+                                }
                             }
                         }
                     }

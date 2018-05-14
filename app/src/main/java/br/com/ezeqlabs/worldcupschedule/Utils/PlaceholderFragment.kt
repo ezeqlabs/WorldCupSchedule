@@ -17,9 +17,10 @@ class PlaceholderFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
         val group = arguments.getSerializable(GROUP) as Group
+        val phase = arguments.getSerializable(PHASE) as String
 
         rootView.btChangeInfos.setOnClickListener {
-            if(rootView.groupInfoCard.visibility == View.GONE) {
+            if (rootView.groupInfoCard.visibility == View.GONE) {
                 rootView.groupInfoCard.visibility = View.VISIBLE
                 rootView.ll_container_matches.visibility = View.GONE
                 rootView.btChangeInfos.text = context.resources.getString(R.string.view_group_matches)
@@ -31,8 +32,15 @@ class PlaceholderFragment : Fragment() {
         }
 
         group?.let {
-            rootView.section_label.text = getString(R.string.section_format, group.letter)
             val textConverter = TextConverter(context)
+
+            if(group.letter.length > 1) {
+                rootView.groupInfoCard.visibility = View.GONE
+                rootView.ll_container_matches.visibility = View.VISIBLE
+                rootView.btChangeInfos.visibility = View.GONE
+            }
+
+            rootView.section_label.text = textConverter.convertLetter(group.letter)
 
             for (team in group.teams) {
                 val teamView = inflater.inflate(R.layout.row_team, null)
@@ -78,11 +86,13 @@ class PlaceholderFragment : Fragment() {
 
     companion object {
         private val GROUP = "group"
+        private val PHASE = "phase"
 
-        fun newInstance(group: Group): PlaceholderFragment {
+        fun newInstance(group: Group, phase: String): PlaceholderFragment {
             val fragment = PlaceholderFragment()
             val args = Bundle()
             args.putSerializable(GROUP, group)
+            args.putString(PHASE, phase)
             fragment.arguments = args
             return fragment
         }

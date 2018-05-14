@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">World Cup Schedule</string>
     <string name="action_finals">Knockout Phase</string>
+    <string name="action_groups">Groups Phase</string>
     <string name="section_format">Group %1$s</string>
 
     <string name="russia">Russia</string>
@@ -35,7 +36,7 @@
     <string name="japan">Japan</string>
     <string name="poland">Poland</string>
     <string name="senegal">Senegal</string>
-    
+
     <string name="luzhniki_stadium">Luzhniki Stadium</string>
     <string name="ekaterinburg_arena">Ekaterinburg Arena</string>
     <string name="saint_petersburg_stadium">Saint Petersburg Stadium</string>
@@ -78,4 +79,10 @@
     <string name="matches_played">MP</string>
     <string name="wins">W</string>
     <string name="loses">L</string>
+
+    <string name="round_of">Round of 16</string>
+    <string name="quarter_finals">Quarter-finals</string>
+    <string name="semi_finals">Semi-finals</string>
+    <string name="third_place">Play-off for third place</string>
+    <string name="finals">Final</string>
 </resources>
