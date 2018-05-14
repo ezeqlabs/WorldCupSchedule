@@ -3,25 +3,38 @@ package br.com.ezeqlabs.worldcupschedule
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import br.com.ezeqlabs.worldcupschedule.Api.RetrofitConfiguration
 import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
 import br.com.ezeqlabs.worldcupschedule.Utils.IntentParameters
 import br.com.ezeqlabs.worldcupschedule.Utils.State
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import kotlinx.android.synthetic.main.activity_splash.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
     lateinit var context: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         context = this
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+        adView.adListener = object : AdListener() {
+            override fun onAdLoaded() {
+                loadInfo()
+            }
+
+            override fun onAdFailedToLoad(errorCode: Int) {
+                loadInfo()
+            }
+        }
     }
 
-    override fun onResume() {
+    fun loadInfo() {
         val call = RetrofitConfiguration.getService().getWorldCupInfo()
         call.enqueue(object : Callback<WorldCupInfo?> {
             override fun onFailure(call: Call<WorldCupInfo?>?, t: Throwable?) {

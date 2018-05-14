@@ -10,7 +10,7 @@ import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
 import br.com.ezeqlabs.worldcupschedule.Utils.IntentParameters
 import kotlinx.android.synthetic.main.activity_main.*
 
-class FinalsActivity : AppCompatActivity() {
+class FinalsActivity : BaseActivity() {
 
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
     private var worldCupInfo: WorldCupInfo? = null

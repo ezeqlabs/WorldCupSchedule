@@ -85,4 +85,11 @@
     <string name="semi_finals">Semi-finals</string>
     <string name="third_place">Play-off for third place</string>
     <string name="finals">Final</string>
+
+    <string name="admob_app_id">ca-app-pub-8736689435854328~8553796224</string>
+    <string name="banner_id_splash">ca-app-pub-8736689435854328/8909019447</string>
+    <string name="banner_id_group_info">ca-app-pub-8736689435854328/1163101803</string>
+    <string name="banner_id_match_item">ca-app-pub-8736689435854328/6596473457</string>
+    <string name="banner_test">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="test_device">1719D87B812E13DE895457EAE3B037BC</string>
 </resources>

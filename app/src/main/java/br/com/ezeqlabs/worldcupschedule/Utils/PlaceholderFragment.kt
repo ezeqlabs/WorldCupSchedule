@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.ezeqlabs.worldcupschedule.Models.Group
 import br.com.ezeqlabs.worldcupschedule.R
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.item_match.view.*
 import kotlinx.android.synthetic.main.row_team.view.*
@@ -17,7 +19,9 @@ class PlaceholderFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
         val group = arguments.getSerializable(GROUP) as Group
-        val phase = arguments.getSerializable(PHASE) as String
+
+        val adRequest = AdRequest.Builder().build()
+        rootView.adViewGroupInfo.loadAd(adRequest)
 
         rootView.btChangeInfos.setOnClickListener {
             if (rootView.groupInfoCard.visibility == View.GONE) {
@@ -34,7 +38,7 @@ class PlaceholderFragment : Fragment() {
         group?.let {
             val textConverter = TextConverter(context)
 
-            if(group.letter.length > 1) {
+            if (group.letter.length > 1) {
                 rootView.groupInfoCard.visibility = View.GONE
                 rootView.ll_container_matches.visibility = View.VISIBLE
                 rootView.btChangeInfos.visibility = View.GONE
@@ -54,6 +58,7 @@ class PlaceholderFragment : Fragment() {
                 rootView.groupInfo.addView(teamView)
             }
 
+            var matches = 1
             for (game in group.games) {
                 val matchView = inflater.inflate(R.layout.item_match, null)
 
@@ -77,11 +82,34 @@ class PlaceholderFragment : Fragment() {
                 val place = "$stadium - $city"
                 matchView.tv_place.text = place
 
+                if (showAds(matches, group.games.size)) {
+                    matchView.adViewMatch.loadAd(adRequest)
+                    matchView.adViewMatch.adListener = object : AdListener() {
+                        override fun onAdFailedToLoad(errorCode: Int) {
+                            matchView.adViewMatch.visibility = View.GONE
+                        }
+                    }
+                } else {
+                    matchView.adViewMatch.visibility = View.GONE
+                }
+
+                matches++
                 rootView.ll_container_matches.addView(matchView)
             }
         }
 
         return rootView
+    }
+
+    private fun showAds(matches: Int, gamesSize: Int): Boolean {
+        return when (gamesSize) {
+            8 -> matches % 4 == 0
+            6 -> matches % 3 == 0
+            4 -> matches % 2 == 0
+            2 -> matches % 2 == 0
+            1 -> matches % 1 == 0
+            else -> false
+        }
     }
 
     companion object {
