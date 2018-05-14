@@ -14,7 +14,7 @@ class TextConverter(context: Context) {
             "saudi_arabia" -> context.resources.getString(R.string.saudi_arabia)
             "egypt" -> context.resources.getString(R.string.egypt)
             "uruguay" -> context.resources.getString(R.string.uruguay)
-            "marocco" -> context.resources.getString(R.string.marocco)
+            "morocco" -> context.resources.getString(R.string.morocco)
             "ir_iran" -> context.resources.getString(R.string.ir_iran)
             "portugal" -> context.resources.getString(R.string.portugal)
             "spain" -> context.resources.getString(R.string.spain)

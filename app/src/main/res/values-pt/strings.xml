@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tabela Copa do Mundo</string>
+    <string name="action_finals">Fase eliminatória</string>
+    <string name="action_groups">Fase de grupos</string>
+    <string name="section_format">Grupo %1$s</string>
+
+    <string name="russia">Rússia</string>
+    <string name="saudi_arabia">Arábia Saudita</string>
+    <string name="egypt">Egito</string>
+    <string name="uruguay">Uruguai</string>
+    <string name="morocco">Marrocos</string>
+    <string name="ir_iran">Irã</string>
+    <string name="portugal">Portugal</string>
+    <string name="spain">Espanha</string>
+    <string name="france">França</string>
+    <string name="australia">Austrália</string>
+    <string name="argentina">Argentina</string>
+    <string name="iceland">Islândia</string>
+    <string name="peru">Peru</string>
+    <string name="denmark">Dinamarca</string>
+    <string name="croatia">Croácia</string>
+    <string name="nigeria">Nigéria</string>
+    <string name="costa_rica">Costa Rica</string>
+    <string name="serbia">Sérvia</string>
+    <string name="germany">Alemanha</string>
+    <string name="mexico">México</string>
+    <string name="brazil">Brasil</string>
+    <string name="switzerland">Suíça</string>
+    <string name="sweden">Suécia</string>
+    <string name="korea_republic">Coreia do Sul</string>
+    <string name="belgium">Bélgica</string>
+    <string name="panama">Panamá</string>
+    <string name="tunisia">Tunísia</string>
+    <string name="england">Inglaterra</string>
+    <string name="colombia">Colômbia</string>
+    <string name="japan">Japão</string>
+    <string name="poland">Polônia</string>
+    <string name="senegal">Senegal</string>
+
+    <string name="luzhniki_stadium">Luzhniki Stadium</string>
+    <string name="ekaterinburg_arena">Ekaterinburg Arena</string>
+    <string name="saint_petersburg_stadium">Saint Petersburg Stadium</string>
+    <string name="fisht_stadium">Fisht Stadium</string>
+    <string name="kazan_arena">Kazan Arena</string>
+    <string name="spartak_stadium">Spartak Stadium</string>
+    <string name="mordovia_arena">Mordovia Arena</string>
+    <string name="kaliningrad_stadium">Kaliningrad Stadium</string>
+    <string name="samara_arena">Samara Arena</string>
+    <string name="rostov_arena">Rostov Arena</string>
+    <string name="nizhny_novgorod_stadium">Nizhny Novgorod Stadium</string>
+    <string name="volgograd_arena">Volgograd Arena</string>
+
+    <string name="moscow">Moscou</string>
+    <string name="ekaterinburg">Ecaterinburgo</string>
+    <string name="st_petersburg">São Petersburgo</string>
+    <string name="sochi">Sochi</string>
+    <string name="kazan">Kazan</string>
+    <string name="saransk">Saransk</string>
+    <string name="kaliningrad">Kaliningrado</string>
+    <string name="samara">Samara</string>
+    <string name="rostov_on_don">Rostov</string>
+    <string name="nizhny_novgorod">Nizhny Novgorod</string>
+    <string name="volgograd">Volgogrado</string>
+
+    <string name="monday">Segunda-feira</string>
+    <string name="tuesday">Terça-feira</string>
+    <string name="wednesday">Quarta-feira</string>
+    <string name="thursday">Quinta-feira</string>
+    <string name="friday">Sexta-feira</string>
+    <string name="saturday">Sábado</string>
+    <string name="sunday">Domingo</string>
+
+    <string name="local_time">Horário local</string>
+
+    <string name="view_group_info">Ver informações do grupo</string>
+    <string name="view_group_matches">Ver partidas do grupo</string>
+
+    <string name="points">PTS</string>
+    <string name="matches_played">J</string>
+    <string name="wins">V</string>
+    <string name="loses">D</string>
+
+    <string name="round_of">Oitavas de final</string>
+    <string name="quarter_finals">Quartas de final</string>
+    <string name="semi_finals">Semifinais</string>
+    <string name="third_place">Decisão do terceiro lugar</string>
+    <string name="finals">Final</string>
+</resources>
