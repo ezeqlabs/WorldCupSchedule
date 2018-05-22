@@ -3,6 +3,7 @@
     <string name="app_name">Tabela Copa do Mundo</string>
     <string name="action_finals">Fase eliminatória</string>
     <string name="action_groups">Fase de grupos</string>
+    <string name="action_fan">Área da torcida</string>
     <string name="section_format">Grupo %1$s</string>
 
     <string name="russia">Rússia</string>
@@ -88,9 +89,24 @@
     <string name="finals">Final</string>
 
     <string name="admob_app_id">ca-app-pub-8736689435854328~8553796224</string>
-    <string name="banner_id_splash">ca-app-pub-8736689435854328/8909019447</string>
-    <string name="banner_id_group_info">ca-app-pub-8736689435854328/1163101803</string>
-    <string name="banner_id_match_item">ca-app-pub-8736689435854328/6596473457</string>
-    <string name="banner_test">ca-app-pub-3940256099942544/6300978111</string>
     <string name="test_device">1719D87B812E13DE895457EAE3B037BC</string>
+
+    <string name="menu_today">Hoje</string>
+    <string name="menu_groups">Grupos</string>
+    <string name="menu_finals">Finais</string>
+    <string name="menu_crowd">Torcida</string>
+
+    <string name="five_world_titles">5 títulos da Copa do Mundo</string>
+    <string name="four_world_titles">4 títulos da Copa do Mundo</string>
+    <string name="two_world_titles">2 títulos da Copa do Mundo</string>
+    <string name="one_world_titles">1 título da Copa do Mundo</string>
+    <string name="zero_world_titles">Nenhum título da Copa do Mundo</string>
+
+    <string name="wait">Aguarde ...</string>
+    <string name="show_your_love">Mostre seu amor pela sua seleção favorita votando nela.</string>
+    <string name="watch_video">Assista o vídeo completo para confirmar o seu voto.</string>
+
+    <string name="dialog_voted_title">Obrigado por votar</string>
+    <string name="dialog_voted_message">Torça com bastante energia. Quem sabe esse ano o título vai para a sua seleção do coração</string>
+    <string name="dialog_voted_button">Continue torcendo</string>
 </resources>

@@ -12,14 +12,26 @@ android {
         applicationId "br.com.ezeqlabs.worldcupschedule"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 100
-        versionName "1.0.0"
+        versionCode 110
+        versionName "1.1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            resValue "string", "reward_video", "ca-app-pub-8736689435854328/3075910701"
+            resValue "string", "banner_id_splash", "ca-app-pub-8736689435854328/8909019447"
+            resValue "string", "banner_id_group_info", "ca-app-pub-8736689435854328/1163101803"
+            resValue "string", "banner_id_match_item", "ca-app-pub-8736689435854328/6596473457"
+        }
+
+        debug {
+            resValue "string", "reward_video", "ca-app-pub-3940256099942544/5224354917"
+            resValue "string", "banner_id_splash", "ca-app-pub-3940256099942544/6300978111"
+            resValue "string", "banner_id_group_info", "ca-app-pub-3940256099942544/6300978111"
+            resValue "string", "banner_id_match_item", "ca-app-pub-3940256099942544/6300978111"
         }
     }
 }

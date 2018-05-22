@@ -2,6 +2,7 @@
     <string name="app_name">World Cup Schedule</string>
     <string name="action_finals">Knockout Phase</string>
     <string name="action_groups">Groups Phase</string>
+    <string name="action_fan">Fan area</string>
     <string name="section_format">Group %1$s</string>
 
     <string name="russia">Russia</string>
@@ -87,9 +88,24 @@
     <string name="finals">Final</string>
 
     <string name="admob_app_id">ca-app-pub-8736689435854328~8553796224</string>
-    <string name="banner_id_splash">ca-app-pub-8736689435854328/8909019447</string>
-    <string name="banner_id_group_info">ca-app-pub-8736689435854328/1163101803</string>
-    <string name="banner_id_match_item">ca-app-pub-8736689435854328/6596473457</string>
-    <string name="banner_test">ca-app-pub-3940256099942544/6300978111</string>
     <string name="test_device">1719D87B812E13DE895457EAE3B037BC</string>
+
+    <string name="menu_today">Today</string>
+    <string name="menu_groups">Groups</string>
+    <string name="menu_finals">Finals</string>
+    <string name="menu_crowd">Crowd</string>
+
+    <string name="five_world_titles">5 World Cup titles</string>
+    <string name="four_world_titles">4 World Cup titles</string>
+    <string name="two_world_titles">2 World Cup titles</string>
+    <string name="one_world_titles">1 World Cup title</string>
+    <string name="zero_world_titles">No World Cup titles</string>
+
+    <string name="wait">Wait ...</string>
+    <string name="show_your_love">Show your love for your favorite team by voting for it.</string>
+    <string name="watch_video">Watch the full video to confirm your vote.</string>
+
+    <string name="dialog_voted_title">Thank you for voting</string>
+    <string name="dialog_voted_message">Twist with enough energy. Who knows this year the title goes to your heart selection</string>
+    <string name="dialog_voted_button">Keep twisting</string>
 </resources>

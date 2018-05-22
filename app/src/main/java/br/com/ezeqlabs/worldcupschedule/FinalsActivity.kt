@@ -2,13 +2,11 @@ package br.com.ezeqlabs.worldcupschedule
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
 import br.com.ezeqlabs.worldcupschedule.Adapters.SectionsPagerAdapter
 import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
 import br.com.ezeqlabs.worldcupschedule.Utils.IntentParameters
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.menu_bottom.*
 
 class FinalsActivity : BaseActivity() {
 
@@ -30,24 +28,23 @@ class FinalsActivity : BaseActivity() {
             mSectionsPagerAdapter!!.groups = worldCupInfo!!.knockoutPhase
             container.adapter = mSectionsPagerAdapter
         }
+
+        prepareBottomMenu()
     }
 
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_finals, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-
-        if (id == R.id.action_groups) {
+    fun prepareBottomMenu() {
+        bt_finals_phase.setBackgroundColor(resources.getColor(R.color.colorAccent))
+        bt_groups_phase.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
-            return true
         }
 
-        return super.onOptionsItemSelected(item)
+        bt_fan_area.setOnClickListener {
+            val intent = Intent(this, FanAreaActivity::class.java)
+            intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
+            startActivity(intent)
+        }
     }
+
 }
