@@ -36,18 +36,21 @@ class FinalsActivity : BaseActivity() {
         bt_finals_phase.setBackgroundColor(resources.getColor(R.color.colorAccent))
 
         bt_today.setOnClickListener {
+            showProgressDialog()
             val intent = Intent(this, TodayActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
         }
 
         bt_groups_phase.setOnClickListener {
+            showProgressDialog()
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
         }
 
         bt_fan_area.setOnClickListener {
+            showProgressDialog()
             val intent = Intent(this, FanAreaActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)

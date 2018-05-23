@@ -16,8 +16,7 @@ import com.google.android.gms.ads.reward.RewardedVideoAdListener
 import kotlinx.android.synthetic.main.dialog_vote.*
 import kotlinx.android.synthetic.main.menu_bottom.*
 
-class FanAreaActivity : AppCompatActivity(), RewardedVideoAdListener {
-    lateinit var progress: ProgressDialog
+class FanAreaActivity : BaseActivity(), RewardedVideoAdListener {
     private var worldCupInfo: WorldCupInfo? = null
     private lateinit var mRewardedVideoAd: RewardedVideoAd
 
@@ -48,34 +47,35 @@ class FanAreaActivity : AppCompatActivity(), RewardedVideoAdListener {
         mRewardedVideoAd.loadAd(resources.getString(R.string.reward_video),
                 AdRequest.Builder().build())
 
-        progress = ProgressDialog(this)
-        progress.setMessage(resources.getString(R.string.wait))
-        progress.show()
+        showProgressDialog()
     }
 
     fun prepareBottomMenu() {
         bt_fan_area.setBackgroundColor(resources.getColor(R.color.colorAccent))
 
         bt_today.setOnClickListener {
+            showProgressDialog()
             val intent = Intent(this, TodayActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
         }
 
         bt_groups_phase.setOnClickListener {
+            showProgressDialog()
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
         }
 
         bt_finals_phase.setOnClickListener {
+            showProgressDialog()
             val intent = Intent(this, FinalsActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
         }
     }
 
-    fun showDialog() {
+    private fun showDialog() {
         val dialog = Dialog(this)
         dialog.setCancelable(false)
         dialog.setCanceledOnTouchOutside(false)
@@ -94,6 +94,7 @@ class FanAreaActivity : AppCompatActivity(), RewardedVideoAdListener {
     }
 
     override fun onResume() {
+        showProgressDialog()
         super.onResume()
         mRewardedVideoAd.resume(this)
     }
@@ -111,7 +112,7 @@ class FanAreaActivity : AppCompatActivity(), RewardedVideoAdListener {
     }
 
     override fun onRewardedVideoAdLoaded() {
-        progress.dismiss()
+        hideProgressDialog()
     }
 
     override fun onRewardedVideoAdOpened() {

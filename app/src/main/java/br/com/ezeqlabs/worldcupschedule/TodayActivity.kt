@@ -2,18 +2,16 @@ package br.com.ezeqlabs.worldcupschedule
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
 import br.com.ezeqlabs.worldcupschedule.Utils.IntentParameters
 import br.com.ezeqlabs.worldcupschedule.Utils.TextConverter
 import kotlinx.android.synthetic.main.activity_today.*
-import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.item_match.view.*
 import kotlinx.android.synthetic.main.menu_bottom.*
 
-class TodayActivity : AppCompatActivity() {
+class TodayActivity : BaseActivity() {
     private var worldCupInfo: WorldCupInfo? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,18 +75,21 @@ class TodayActivity : AppCompatActivity() {
         bt_today.setBackgroundColor(resources.getColor(R.color.colorAccent))
 
         bt_groups_phase.setOnClickListener {
+            showProgressDialog()
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
         }
 
         bt_finals_phase.setOnClickListener {
+            showProgressDialog()
             val intent = Intent(this, FinalsActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
         }
 
         bt_fan_area.setOnClickListener {
+            showProgressDialog()
             val intent = Intent(this, FanAreaActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
