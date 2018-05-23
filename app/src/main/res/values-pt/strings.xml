@@ -87,6 +87,7 @@
     <string name="semi_finals">Semifinais</string>
     <string name="third_place">Decisão do terceiro lugar</string>
     <string name="finals">Final</string>
+    <string name="today">Jogos hoje</string>
 
     <string name="admob_app_id">ca-app-pub-8736689435854328~8553796224</string>
     <string name="test_device">1719D87B812E13DE895457EAE3B037BC</string>
@@ -102,11 +103,12 @@
     <string name="one_world_titles">1 título da Copa do Mundo</string>
     <string name="zero_world_titles">Nenhum título da Copa do Mundo</string>
 
-    <string name="wait">Aguarde ...</string>
-    <string name="show_your_love">Mostre seu amor pela sua seleção favorita votando nela.</string>
-    <string name="watch_video">Assista o vídeo completo para confirmar o seu voto.</string>
+    <string name="wait">Caregando</string>
+    <string name="show_your_love">Mostre seu amor pela sua seleção favorita votando nela. Assista o vídeo completo para confirmar o seu voto.</string>
 
     <string name="dialog_voted_title">Obrigado por votar</string>
     <string name="dialog_voted_message">Torça com bastante energia. Quem sabe esse ano o título vai para a sua seleção do coração</string>
     <string name="dialog_voted_button">Continue torcendo</string>
+
+    <string name="not_today">Não haverá nenhum jogo hoje</string>
 </resources>

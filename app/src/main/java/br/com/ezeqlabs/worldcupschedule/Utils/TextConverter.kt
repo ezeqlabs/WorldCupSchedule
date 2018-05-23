@@ -138,6 +138,7 @@ class TextConverter(context: Context) {
             "semi_finals" -> context.resources.getString(R.string.semi_finals)
             "third_place" -> context.resources.getString(R.string.third_place)
             "finals" -> context.resources.getString(R.string.finals)
+            "today" -> context.resources.getString(R.string.today)
             else -> context.resources.getString(R.string.section_format, key)
         }
 

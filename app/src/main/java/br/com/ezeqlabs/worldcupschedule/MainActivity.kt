@@ -34,6 +34,13 @@ class MainActivity : BaseActivity() {
 
     fun prepareBottomMenu() {
         bt_groups_phase.setBackgroundColor(resources.getColor(R.color.colorAccent))
+
+        bt_today.setOnClickListener {
+            val intent = Intent(this, TodayActivity::class.java)
+            intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
+            startActivity(intent)
+        }
+
         bt_finals_phase.setOnClickListener {
             val intent = Intent(this, FinalsActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)

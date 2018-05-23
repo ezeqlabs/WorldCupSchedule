@@ -31,6 +31,9 @@
         <activity
             android:name=".FanAreaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TodayActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

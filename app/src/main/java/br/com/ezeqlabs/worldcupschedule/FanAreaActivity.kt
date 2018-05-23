@@ -18,34 +18,6 @@ import kotlinx.android.synthetic.main.menu_bottom.*
 
 class FanAreaActivity : AppCompatActivity(), RewardedVideoAdListener {
     lateinit var progress: ProgressDialog
-
-    override fun onRewardedVideoAdClosed() {
-        loadRewardedVideoAd()
-    }
-
-    override fun onRewardedVideoAdLeftApplication() {
-    }
-
-    override fun onRewardedVideoAdLoaded() {
-        progress.dismiss()
-    }
-
-    override fun onRewardedVideoAdOpened() {
-    }
-
-    override fun onRewardedVideoCompleted() {
-    }
-
-    override fun onRewarded(p0: RewardItem?) {
-        showDialog()
-    }
-
-    override fun onRewardedVideoStarted() {
-    }
-
-    override fun onRewardedVideoAdFailedToLoad(p0: Int) {
-    }
-
     private var worldCupInfo: WorldCupInfo? = null
     private lateinit var mRewardedVideoAd: RewardedVideoAd
 
@@ -83,6 +55,13 @@ class FanAreaActivity : AppCompatActivity(), RewardedVideoAdListener {
 
     fun prepareBottomMenu() {
         bt_fan_area.setBackgroundColor(resources.getColor(R.color.colorAccent))
+
+        bt_today.setOnClickListener {
+            val intent = Intent(this, TodayActivity::class.java)
+            intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
+            startActivity(intent)
+        }
+
         bt_groups_phase.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
@@ -122,5 +101,32 @@ class FanAreaActivity : AppCompatActivity(), RewardedVideoAdListener {
     override fun onDestroy() {
         super.onDestroy()
         mRewardedVideoAd.destroy(this)
+    }
+
+    override fun onRewardedVideoAdClosed() {
+        loadRewardedVideoAd()
+    }
+
+    override fun onRewardedVideoAdLeftApplication() {
+    }
+
+    override fun onRewardedVideoAdLoaded() {
+        progress.dismiss()
+    }
+
+    override fun onRewardedVideoAdOpened() {
+    }
+
+    override fun onRewardedVideoCompleted() {
+    }
+
+    override fun onRewarded(p0: RewardItem?) {
+        showDialog()
+    }
+
+    override fun onRewardedVideoStarted() {
+    }
+
+    override fun onRewardedVideoAdFailedToLoad(p0: Int) {
     }
 }
