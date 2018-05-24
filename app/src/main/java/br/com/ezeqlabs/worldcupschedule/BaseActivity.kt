@@ -30,4 +30,9 @@ open class BaseActivity : AppCompatActivity() {
             progress.dismiss()
         } catch (e: Exception) {}
     }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        System.gc()
+    }
 }

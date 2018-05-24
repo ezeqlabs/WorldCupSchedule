@@ -34,7 +34,6 @@ class FanAreaActivity : BaseActivity(), RewardedVideoAdListener {
 
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
         mRewardedVideoAd.rewardedVideoAdListener = this
-        loadRewardedVideoAd()
     }
 
     fun clickVideo(v: View) {
@@ -44,6 +43,7 @@ class FanAreaActivity : BaseActivity(), RewardedVideoAdListener {
     }
 
     private fun loadRewardedVideoAd() {
+        hideProgressDialog()
         mRewardedVideoAd.loadAd(resources.getString(R.string.reward_video),
                 AdRequest.Builder().build())
 
@@ -94,7 +94,7 @@ class FanAreaActivity : BaseActivity(), RewardedVideoAdListener {
     }
 
     override fun onResume() {
-        showProgressDialog()
+        loadRewardedVideoAd()
         super.onResume()
         mRewardedVideoAd.resume(this)
     }
