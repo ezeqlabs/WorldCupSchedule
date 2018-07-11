@@ -58,6 +58,7 @@ class FanAreaActivity : BaseActivity(), RewardedVideoAdListener {
             val intent = Intent(this, TodayActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
+            finish()
         }
 
         bt_groups_phase.setOnClickListener {
@@ -65,6 +66,7 @@ class FanAreaActivity : BaseActivity(), RewardedVideoAdListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
+            finish()
         }
 
         bt_finals_phase.setOnClickListener {
@@ -72,6 +74,7 @@ class FanAreaActivity : BaseActivity(), RewardedVideoAdListener {
             val intent = Intent(this, FinalsActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
+            finish()
         }
     }
 

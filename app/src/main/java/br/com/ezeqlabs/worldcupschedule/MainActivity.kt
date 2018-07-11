@@ -40,6 +40,7 @@ class MainActivity : BaseActivity() {
             val intent = Intent(this, TodayActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
+            finish()
         }
 
         bt_finals_phase.setOnClickListener {
@@ -47,6 +48,7 @@ class MainActivity : BaseActivity() {
             val intent = Intent(this, FinalsActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
+            finish()
         }
 
         bt_fan_area.setOnClickListener {
@@ -54,6 +56,7 @@ class MainActivity : BaseActivity() {
             val intent = Intent(this, FanAreaActivity::class.java)
             intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
             startActivity(intent)
+            finish()
         }
     }
 }
