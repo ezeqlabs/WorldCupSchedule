@@ -10,6 +10,7 @@ class Team : Serializable {
     val matchesPlayed : Int = 4
     val wins : Int = 4
     val loses : Int = 4
+    val draws : Int = 4
     val points : Int = 4
     val position : Int = 4
 }

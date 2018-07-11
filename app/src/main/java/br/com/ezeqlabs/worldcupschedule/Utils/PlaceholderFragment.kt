@@ -54,6 +54,7 @@ class PlaceholderFragment : Fragment() {
                 teamView.teamMatchesPlayed.text = team.matchesPlayed.toString()
                 teamView.teamWins.text = team.wins.toString()
                 teamView.teamLoses.text = team.loses.toString()
+                teamView.teamDraws.text = team.draws.toString()
 
                 rootView.groupInfo.addView(teamView)
             }

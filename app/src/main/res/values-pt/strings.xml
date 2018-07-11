@@ -81,6 +81,7 @@
     <string name="matches_played">J</string>
     <string name="wins">V</string>
     <string name="loses">D</string>
+    <string name="draws">E</string>
 
     <string name="round_of">Oitavas de final</string>
     <string name="quarter_finals">Quartas de final</string>

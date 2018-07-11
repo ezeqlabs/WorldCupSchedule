@@ -80,6 +80,7 @@
     <string name="matches_played">MP</string>
     <string name="wins">W</string>
     <string name="loses">L</string>
+    <string name="draws">D</string>
 
     <string name="round_of">Round of 16</string>
     <string name="quarter_finals">Quarter-finals</string>
