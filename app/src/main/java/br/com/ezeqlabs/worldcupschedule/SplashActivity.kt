@@ -46,16 +46,25 @@ class SplashActivity : BaseActivity() {
                         response.body()?.let {
                             val worldCupInfo = response.body()
                             worldCupInfo?.let {
-                                if (worldCupInfo.phase == State.GROUPS) {
-                                    val intent = Intent(context, MainActivity::class.java)
-                                    intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
-                                    startActivity(intent)
-                                    finish()
-                                } else {
-                                    val intent = Intent(context, FinalsActivity::class.java)
-                                    intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
-                                    startActivity(intent)
-                                    finish()
+                                when (worldCupInfo.phase) {
+                                    State.GROUPS -> {
+                                        val intent = Intent(context, MainActivity::class.java)
+                                        intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                    State.FINALS -> {
+                                        val intent = Intent(context, FinalsActivity::class.java)
+                                        intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                    State.WINNERS -> {
+                                        val intent = Intent(context, TodayActivity::class.java)
+                                        intent.putExtra(IntentParameters.worldCupInfo, worldCupInfo)
+                                        startActivity(intent)
+                                        finish()
+                                    }
                                 }
                             }
                         }

@@ -112,4 +112,11 @@
     <string name="not_today">There will be no matches today</string>
 
     <string name="action_refresh">Refresh</string>
+
+    <string name="winner_champion">Champion</string>
+    <string name="winner_second_place">Vice Champion</string>
+    <string name="winner_third_place">Third place</string>
+    <string name="winner_fourth_place">Fourth place</string>
+
+    <string name="first_worldcup_title">First World Cup Title</string>
 </resources>

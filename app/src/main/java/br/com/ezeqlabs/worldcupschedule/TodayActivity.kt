@@ -8,9 +8,11 @@ import android.view.MenuItem
 import android.view.View
 import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
 import br.com.ezeqlabs.worldcupschedule.Utils.IntentParameters
+import br.com.ezeqlabs.worldcupschedule.Utils.State
 import br.com.ezeqlabs.worldcupschedule.Utils.TextConverter
 import kotlinx.android.synthetic.main.activity_today.*
 import kotlinx.android.synthetic.main.item_match.view.*
+import kotlinx.android.synthetic.main.item_winner.view.*
 import kotlinx.android.synthetic.main.menu_bottom.*
 
 class TodayActivity : BaseActivity() {
@@ -32,14 +34,36 @@ class TodayActivity : BaseActivity() {
     }
 
     private fun prepareInformation() {
+        val textConverter = TextConverter(this)
+
+        if (worldCupInfo!!.phase == State.WINNERS) {
+            container_games.visibility = View.VISIBLE
+            container_no_games.visibility = View.GONE
+            section_label.visibility = View.GONE
+
+            for (team in worldCupInfo!!.winners) {
+                val teamView = LayoutInflater.from(this).inflate(R.layout.item_winner, null)
+
+                teamView.tv_winner.text = textConverter.convertCountry(team.name)
+                teamView.tv_position.text = textConverter.convertPosition(team.position)
+                teamView.tv_obs.text = textConverter.convertTitles(team.wins, team.name)
+
+                if (team.position > 1) {
+                    teamView.tv_obs.visibility = View.GONE
+                }
+
+                content_games_today.addView(teamView)
+            }
+
+            return
+        }
+
         val group = worldCupInfo!!.gamesToday.get(0)
         if (group.games.isNotEmpty()) {
             container_games.visibility = View.VISIBLE
             container_no_games.visibility = View.GONE
 
-            val textConverter = TextConverter(this)
             section_label.text = textConverter.convertLetter(group.letter)
-
 
             for (game in group.games) {
                 val matchView = LayoutInflater.from(this).inflate(R.layout.item_match, null)
@@ -109,7 +133,7 @@ class TodayActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item != null) {
-            when(item.itemId) {
+            when (item.itemId) {
                 R.id.action_refresh -> {
                     val intent = Intent(this, SplashActivity::class.java)
                     startActivity(intent)

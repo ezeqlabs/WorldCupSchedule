@@ -113,4 +113,11 @@
     <string name="not_today">Não haverá nenhum jogo hoje</string>
 
     <string name="action_refresh">Atualizar</string>
+
+    <string name="winner_champion">Campeão</string>
+    <string name="winner_second_place">Vice campeão</string>
+    <string name="winner_third_place">Terceiro colocado</string>
+    <string name="winner_fourth_place">Quarto colocado</string>
+
+    <string name="first_worldcup_title">Primeiro título da Copa do Mundo</string>
 </resources>

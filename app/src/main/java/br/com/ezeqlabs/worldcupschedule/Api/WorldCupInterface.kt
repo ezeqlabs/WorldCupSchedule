@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface WorldCupInterface {
-    @GET("v0/b/world-cup-schedule.appspot.com/o/worldcup.json?alt=media&token=964d2386-e1f2-48dc-aad3-3ab8ac45d591")
+    @GET("v0/b/world-cup-schedule.appspot.com/o/worldcup_winners.json?alt=media&token=c86123f4-4d02-4226-bd3b-1c0a86f2fce9")
     fun getWorldCupInfo() : Call<WorldCupInfo>
 }

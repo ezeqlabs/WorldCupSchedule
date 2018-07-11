@@ -10,4 +10,5 @@ class WorldCupInfo : Serializable {
     @SerializedName("games_today")
     lateinit var gamesToday: List<Group>
     lateinit var phase: String
+    lateinit var winners: List<Team>
 }

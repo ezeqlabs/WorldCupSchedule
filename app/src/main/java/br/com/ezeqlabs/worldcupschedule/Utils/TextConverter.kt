@@ -127,7 +127,7 @@ class TextConverter(context: Context) {
         val dateFormatted = formatter.format(date).split(" ")
         val hour = dateFormatted[0]
         val period = dateFormatted[1]
-        
+
         return "$hour $period"
     }
 
@@ -143,5 +143,27 @@ class TextConverter(context: Context) {
         }
 
         return letterName
+    }
+
+    fun convertPosition(position: Int): String {
+        return when (position) {
+            1 -> context.resources.getString(R.string.winner_champion)
+            2 -> context.resources.getString(R.string.winner_second_place)
+            3 -> context.resources.getString(R.string.winner_third_place)
+            else -> context.resources.getString(R.string.winner_fourth_place)
+        }
+    }
+
+    fun convertTitles(titles: Int, country: String): String {
+        return when (titles) {
+            1 -> {
+                if (country == "france") {
+                    "1998 - 2018"
+                } else {
+                    "1966 - 2018"
+                }
+            }
+            else -> context.resources.getString(R.string.first_worldcup_title)
+        }
     }
 }
