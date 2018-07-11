@@ -1,10 +1,10 @@
 package br.com.ezeqlabs.worldcupschedule
 
 import android.app.Dialog
-import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
 import br.com.ezeqlabs.worldcupschedule.Utils.IntentParameters
@@ -13,6 +13,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
+import kotlinx.android.synthetic.main.activity_fan_area.*
 import kotlinx.android.synthetic.main.dialog_vote.*
 import kotlinx.android.synthetic.main.menu_bottom.*
 
@@ -25,6 +26,7 @@ class FanAreaActivity : BaseActivity(), RewardedVideoAdListener {
         setContentView(R.layout.activity_fan_area)
 
         val extras = intent.extras
+        setSupportActionBar(toolbar)
 
         extras?.let {
             worldCupInfo = extras.getSerializable(IntentParameters.worldCupInfo) as WorldCupInfo
@@ -132,5 +134,23 @@ class FanAreaActivity : BaseActivity(), RewardedVideoAdListener {
     }
 
     override fun onRewardedVideoAdFailedToLoad(p0: Int) {
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item != null) {
+            when (item.itemId) {
+                R.id.action_refresh -> {
+                    val intent = Intent(this, SplashActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+        }
+        return true
     }
 }

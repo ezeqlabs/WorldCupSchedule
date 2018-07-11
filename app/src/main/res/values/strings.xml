@@ -110,4 +110,6 @@
     <string name="dialog_voted_button">Keep twisting</string>
 
     <string name="not_today">There will be no matches today</string>
+
+    <string name="action_refresh">Refresh</string>
 </resources>

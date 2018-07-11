@@ -111,4 +111,6 @@
     <string name="dialog_voted_button">Continue torcendo</string>
 
     <string name="not_today">Não haverá nenhum jogo hoje</string>
+
+    <string name="action_refresh">Atualizar</string>
 </resources>

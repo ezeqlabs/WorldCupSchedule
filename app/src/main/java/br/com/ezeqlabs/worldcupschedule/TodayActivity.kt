@@ -3,6 +3,8 @@ package br.com.ezeqlabs.worldcupschedule
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import br.com.ezeqlabs.worldcupschedule.Models.WorldCupInfo
 import br.com.ezeqlabs.worldcupschedule.Utils.IntentParameters
@@ -19,6 +21,7 @@ class TodayActivity : BaseActivity() {
         setContentView(R.layout.activity_today)
 
         val extras = intent.extras
+        setSupportActionBar(toolbar)
 
         extras?.let {
             worldCupInfo = extras.getSerializable(IntentParameters.worldCupInfo) as WorldCupInfo
@@ -97,5 +100,23 @@ class TodayActivity : BaseActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item != null) {
+            when(item.itemId) {
+                R.id.action_refresh -> {
+                    val intent = Intent(this, SplashActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+        }
+        return true
     }
 }
